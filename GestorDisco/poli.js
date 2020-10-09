@@ -700,7 +700,7 @@ function ordenarC_LOOK(){
             
             if(api == 0)
             {
-                var lala = discoc_look - basefinc_look[i-1];
+                var lala = 0;
                 lala= basefinc_look[i]+1 +lala;
                 console.log(discoc_look+"********discotam---->"+lala);
                         
