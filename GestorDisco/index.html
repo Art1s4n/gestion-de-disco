@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>politicas de disco</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script type="text/javascript" src="poli.js"></script>
+</head>
+<body>
+    <div class="container py-2">
+        <h1 style="font-weight:bold; text-align: center;">GESTION DE DISCO</h1>
+		<p class="lead">Ingrese datos</p>
+		<form>
+            <div style="width: 48%; position: relative; float: left;">
+                <input id="Tdisco" type="number" placeholder="ingrese el tamaño del disco" class="form-control my-2">
+                <input id="IniCab" type="number" placeholder="ingresa la posicion del cabezal"  class="form-control my-2">
+                <button id="RegInicio" class="btn btn-warning" type="reset"  onclick="RegInicial();">ingresar</button>
+            </div>
+            <div style="width: 48%; position: relative; float: right; margin-bottom: 100px;">
+                <input id="InsPos" type="number" placeholder="ingrese las peticiones" class="form-control my-2">
+                <button id="botonRegistrar"class="btn btn-warning" type="reset"  onclick="registrar();">agregar</button>
+            </div>
+			
+            
+        </form>
+
+        <div style="padding:10px; text-align: center; margin-top: 200px;">
+            <button id="FCFS"class="btn btn-info" type="reset" onclick="ordenarFCFS();">FCFS</button>
+            <button id="SSTF"class="btn btn-warning" type="reset" onclick="ordenarSSTF();">SSTF</button>
+            <button id="SCAN"class="btn btn-info" type="reset" onclick="ordenarSCAN();">SCAN</button>
+            <button id="C_SCAN"class="btn btn-warning" type="reset" onclick="ordenarC_SCAN();">C-SCAN</button>
+            <button id="LOOK"class="btn btn-info" type="reset" onclick="ordenarLOOK();">LOOK</button>
+            <button id="C_LOOK"class="btn btn-warning" type="reset" onclick="ordenarC_LOOK();">C-LOOK</button>
+        </div>
+        <div id="Listado"> </div>
+    </div>
+    <div class="container">
+		<table class="table" id="tabla">
+			<thead class="thead-inverse">
+				<tr>
+                    <th>Politica</th>
+					<th>Cabezal</th>
+					<th>Tiempo individual</th>
+					<th>Tiempo acumulado</th>
+					
+				</tr>
+			</thead>
+			<tbody id="tabla1" >
+			</tbody>
+		</table>
+		
+	</div>
+    
+    <div id="grafico"></div>
+    
+</body>
+</html>
